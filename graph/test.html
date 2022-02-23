@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+  <title>test</title>
+</head>
+<body>
+  <div id="graphContainer">
+  </div>
+  <script type="module">
+    import { createGraphManager } from './script/main.js'
+    import { historySource } from "./script/test.js";
+
+    const dataX = historySource.map(({ generation }) => generation);
+    const dataY = historySource.map(({ roundness }) => roundness);
+
+    const draw = createGraphManager('graphContainer');
+    draw(dataX, dataY, undefined, { min: 0.073 });
+  </script>
+</body>
+</html>

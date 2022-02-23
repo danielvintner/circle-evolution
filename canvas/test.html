@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <title>test</title>
+</head>
+<body>
+  <div id="canvasContainer">
+  </div>
+  <script type="module">
+    import { createCanvasManager } from './script/main.js'
+    import { historySource } from './script/test.js'
+
+    const manager = createCanvasManager('canvasContainer');
+    manager.setHistory(historySource.map(history => history.polyPoints));
+    // manager.setSettings('history', true);
+    manager.draw();
+  </script>
+</body>
+</html>
